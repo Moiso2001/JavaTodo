@@ -5,7 +5,10 @@ import java.util.Scanner;
 public class App {
 	private static final String[] options = {"1: Agregar tarea", "2: Ver tareas pendientes", "3: Ver tareas completadas"};
 	private static final Scanner scanner = new Scanner(System.in);
+	
+	private static com.todoList.service.TaskService TaskService = new com.todoList.service.TaskService();
 
+	// Main method
 	public static void main(String[] args) {
 		// Start Menu
 		System.out.println("Hola Moises, Que deseas hacer hoy");
@@ -30,6 +33,7 @@ public class App {
             switch (numOption) {
                 case 1:
                     System.out.println("Seleccionaste la opción: " + numOption);
+                    System.out.println(createTask());
                     break;
                 case 2:
                     System.out.println("Seleccionaste la opción: " + numOption);
@@ -43,6 +47,11 @@ public class App {
             }
 
         } while (numOption < 1 || numOption > 3);
+	}
+	
+	// Util Methods
+	public static String createTask() {
+		return TaskService.createTask();
 	}
 }
 
