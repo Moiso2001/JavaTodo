@@ -16,9 +16,22 @@ public class App {
 		}
 		
 		// Scanner input and switch options
-		String text = scanner.nextLine();
+		int numOption = scanner.nextInt();
 		
-		
+		switch(numOption) {
+			case 1:
+				System.out.println("Seleccionaste opcion: " + numOption);
+				break;
+			case 2:
+				System.out.println("Seleccionaste opcion: " + numOption);
+				break;
+			case 3: 
+				System.out.println("Seleccionaste opcion: " + numOption);
+				break;
+			default:
+				System.out.println("No seleccionaste ninguna opcion");
+				break;
+		}
 		
 		
 		
