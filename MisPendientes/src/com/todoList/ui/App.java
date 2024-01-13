@@ -15,25 +15,34 @@ public class App {
 			System.out.println(option);
 		}
 		
-		// Scanner input and switch options
-		int numOption = scanner.nextInt();
-		
-		switch(numOption) {
-			case 1:
-				System.out.println("Seleccionaste opcion: " + numOption);
-				break;
-			case 2:
-				System.out.println("Seleccionaste opcion: " + numOption);
-				break;
-			case 3: 
-				System.out.println("Seleccionaste opcion: " + numOption);
-				break;
-			default:
-				System.out.println("No seleccionaste ninguna opcion");
-				break;
-		}
-		
-		
-		
+		int numOption;
+
+        do {
+            System.out.print("Ingresa el número de la opción: ");
+            while (!scanner.hasNextInt()) {
+                System.out.println("Por favor, ingresa un número válido.");
+                System.out.print("Ingresa el número de la opción: ");
+                scanner.next(); // Consumir la entrada no válida
+            }
+            
+            numOption = scanner.nextInt();
+
+            switch (numOption) {
+                case 1:
+                    System.out.println("Seleccionaste la opción: " + numOption);
+                    break;
+                case 2:
+                    System.out.println("Seleccionaste la opción: " + numOption);
+                    break;
+                case 3:
+                    System.out.println("Seleccionaste la opción: " + numOption);
+                    break;
+                default:
+                    System.out.println("Opción no válida. Inténtalo de nuevo.");
+                    break;
+            }
+
+        } while (numOption < 1 || numOption > 3);
 	}
 }
+
