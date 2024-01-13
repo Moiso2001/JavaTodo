@@ -1,5 +1,5 @@
 package com.todoList.util;
 
-public class App{
+public class Util{
 
 }
